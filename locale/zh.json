@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "JetBrains IDE MCP 连接器",
+    "description": "按会话工作目录把每个会话接到对应的 JetBrains IDE 项目窗口，并把 IDE 的 MCP 工具暴露为 mcp__idea__*。"
+  }
+}

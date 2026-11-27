@@ -1,0 +1,20 @@
+# dsh-idea-mcp-connector bundle patch.
+#
+# 这个插件把本机所有在跑的 JetBrains IDE MCP 端点（IntelliJ IDEA / PyCharm / GoLand …）
+# 聚合成 `mcp__idea__*` 工具，并在每次调用时按「当前会话的工作目录」路由到对应项目的
+# IDEA 窗口（通过 `IJ_MCP_SERVER_PROJECT_PATH` 请求头 + `projectPath` 参数）。
+#
+# 不需要在这里写死端口：端口由 `idea.log` 里的
+# `io.ktor.server.Application - Responding at http://127.0.0.1:<port>` 自动发现。
+#
+# 常用可选项（不写就用默认值）：
+#   endpoint: 'http://127.0.0.1:64342/stream'   # 手工指定端点，跳过自动发现
+#   logRoots: ['D:/custom/JetBrains']            # 额外的 JetBrains 日志根目录
+#   includeTools: ['get_project_*']             # 只暴露匹配的工具（支持 * 通配）
+#   excludeTools: ['execute_terminal_command']  # 隐藏指定工具
+#   refreshIntervalMs: 30000                    # 端点自动重扫间隔，0 关闭
+#   toolCallTimeoutMs: 120000                   # 单次 IDE 工具调用超时（构建类可调大）
+- insert:
+    - id: idea-mcp-connector
+      name: dsh-idea-mcp-connector
+      config: {}

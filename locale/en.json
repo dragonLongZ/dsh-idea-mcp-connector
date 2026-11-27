@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "JetBrains IDE MCP connector",
+    "description": "Connects each session to the JetBrains IDE project that matches its working directory, and exposes the IDE's MCP tools as mcp__idea__*."
+  }
+}
